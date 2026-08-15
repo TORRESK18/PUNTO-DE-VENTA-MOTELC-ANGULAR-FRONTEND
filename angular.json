@@ -21,23 +21,22 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -55,7 +54,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+      {
+        "replace": "src/environments/environment.ts",
+        "with": "src/environments/environment.development.ts"
+      }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -67,7 +72,9 @@
               "buildTarget": "MTLCRISTALVK18:build:production"
             },
             "development": {
-              "buildTarget": "MTLCRISTALVK18:build:development"
+              
+              "buildTarget": "MTLCRISTALVK18:build:development",
+              "hmr": false
             }
           },
           "defaultConfiguration": "development"
@@ -97,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "11b66646-fa47-4103-8aff-09fdc8a2c093"
   }
 }

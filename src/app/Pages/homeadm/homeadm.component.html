@@ -1,0 +1,584 @@
+<mat-card
+    style="  background: linear-gradient(to left, #979a9c, #0b1014);  height: 100vh; width: 100vw; font-family: century-gothic, sans-serif; font-weight: 400; font-style: normal; color: aliceblue; overflow: hidden; padding: 0; margin: 0;">
+    <div class="mapa">
+        <img src="assets/APPMTLCRLFBG.png" class="logo-centro-top" />
+
+
+        <!-- Íconos de casa del 1 al 42 posicionados manualmente -->
+        <div class="icon-wrapper" (click)="abrirFormReserva(1)" style="top: 87%; left: 5%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;"> 1</span>
+            <div (click)="openForm2ConNumero(1);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(2)" style="top: 78%; left: 6%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">2</span>
+            <div (click)="openForm2ConNumero(2);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(3)" style="top: 69%; left: 7.5%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">3</span>
+            <div (click)="openForm2ConNumero(3);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(4)" style="top: 60%; left: 9%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">4</span>
+            <div (click)="openForm2ConNumero(4);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(5)" style="top: 51%; left: 10.5%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">5</span>
+            <div (click)="openForm2ConNumero(5);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(6)" style="top: 42%; left: 12%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">6</span>
+            <div (click)="openForm2ConNumero(6);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(7)" style="top: 33%; left: 13.5%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">7</span>
+            <div (click)="openForm2ConNumero(7);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(8)" style="top: 24%; left: 15%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">8</span>
+            <div (click)="openForm2ConNumero(8);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(9)" style="top: 15%; left: 16.5%;"><i
+                class='bx bxs-home-alt-2'></i><span style="margin-left:-3.3vw;">9</span>
+            <div (click)="openForm2ConNumero(9);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(10)" style="top: 6%; left: 18%;"><i
+                class='bx bxs-home-alt-2'></i><span>10</span>
+            <div (click)="openForm2ConNumero(10);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+
+
+
+
+
+
+        <div class="icon-wrapper" (click)="abrirFormReserva(11)" style="top: 1%; left: 31%;"><i
+                class='bx bxs-home-alt-2'></i><span>11</span>
+            <div (click)="openForm2ConNumero(11);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(12)" style="top: 10%; left: 29%;"><i
+                class='bx bxs-home-alt-2'></i><span>12</span>
+            <div (click)="openForm2ConNumero(12);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(13)" style="top: 19%; left: 27%;"><i
+                class='bx bxs-home-alt-2'></i><span>13</span>
+            <div (click)="openForm2ConNumero(13);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(14)" style="top: 28%; left: 25.4%;"><i
+                class='bx bxs-home-alt-2'></i><span>14</span>
+            <div (click)="openForm2ConNumero(14);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(15)" style="top: 37%; left: 24%;"><i
+                class='bx bxs-home-alt-2'></i><span>15</span>
+            <div (click)="openForm2ConNumero(15);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(16)" style="top: 46%; left: 22.4%;"><i
+                class='bx bxs-home-alt-2'></i><span>16</span>
+            <div (click)="openForm2ConNumero(16);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(17)" style="top: 55%; left: 21%;"><i
+                class='bx bxs-home-alt-2'></i><span>17</span>
+            <div (click)="openForm2ConNumero(17);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(18)" style="top: 64%; left: 19.4%;"><i
+                class='bx bxs-home-alt-2'></i><span>18</span>
+            <div (click)="openForm2ConNumero(18);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(19)" style="top: 73%; left: 18%;"><i
+                class='bx bxs-home-alt-2'></i><span>19</span>
+            <div (click)="openForm2ConNumero(19);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+
+        <div class="icon-wrapper" (click)="abrirFormReserva(20)" style="top: 73%; left: 24%;"><i
+                class='bx bxs-home-alt-2'></i><span>20</span>
+            <div (click)="openForm2ConNumero(20);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(21)" style="top: 73%; left: 29.4%;"><i
+                class='bx bxs-home-alt-2'></i><span>21</span>
+            <div (click)="openForm2ConNumero(21);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(22)" style="top: 73%; left: 35%;"><i
+                class='bx bxs-home-alt-2'></i><span>22</span>
+            <div (click)="openForm2ConNumero(22);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(23)" style="top: 73%; left: 40.4%;"><i
+                class='bx bxs-home-alt-2'></i><span>23</span>
+            <div (click)="openForm2ConNumero(23);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(24)" style="top: 73%; left: 46%;"><i
+                class='bx bxs-home-alt-2'></i><span>24</span>
+            <div (click)="openForm2ConNumero(24);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(25)" style="top: 73%; left: 51.4%;"><i
+                class='bx bxs-home-alt-2'></i><span>25</span>
+            <div (click)="openForm2ConNumero(25);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(26)" style="top: 73%; left: 57%;"><i
+                class='bx bxs-home-alt-2'></i><span>26</span>
+            <div (click)="openForm2ConNumero(26);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+
+        <div class="icon-wrapper" (click)="abrirFormReserva(27)" style="top: 87%; left: 12%;"><i
+                class='bx bxs-home-alt-2'></i><span>27</span>
+            <div (click)="openForm2ConNumero(27);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(28)" style="top: 87%; left: 17%;"><i
+                class='bx bxs-home-alt-2'></i><span>28</span>
+            <div (click)="openForm2ConNumero(28);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(29)" style="top: 87%; left: 22%;"><i
+                class='bx bxs-home-alt-2'></i><span>29</span>
+            <div (click)="openForm2ConNumero(29);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(30)" style="top: 87%; left: 27%;"><i
+                class='bx bxs-home-alt-2'></i><span>30</span>
+            <div (click)="openForm2ConNumero(30);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(31)" style="top: 87%; left: 32%;"><i
+                class='bx bxs-home-alt-2'></i><span>31</span>
+            <div (click)="openForm2ConNumero(31);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(32)" style="top: 87%; left: 37%;"><i
+                class='bx bxs-home-alt-2'></i><span>32</span>
+            <div (click)="openForm2ConNumero(32);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(33)" style="top: 87%; left: 42%;"><i
+                class='bx bxs-home-alt-2'></i><span>33</span>
+            <div (click)="openForm2ConNumero(33);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(34)" style="top: 87%; left: 47%;"><i
+                class='bx bxs-home-alt-2'></i><span>34</span>
+            <div (click)="openForm2ConNumero(34);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(35)" style="top: 87%; left: 52%;"><i
+                class='bx bxs-home-alt-2'></i><span>35</span>
+            <div (click)="openForm2ConNumero(35);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(36)" style="top: 87%; left: 57%;"><i
+                class='bx bxs-home-alt-2'></i><span>36</span>
+            <div (click)="openForm2ConNumero(36);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(37)" style="top: 87%; left: 62%;"><i
+                class='bx bxs-home-alt-2'></i><span>37</span>
+            <div (click)="openForm2ConNumero(37);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(38)" style="top: 83%; left: 67%; "><i
+                class='bx bxs-home-alt-2' style="font-size: 7vw;"></i><span>38</span>
+            <div (click)="openForm2ConNumero(38)" class="cuadroitemizqinfo"> <i class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+
+        <div class="icon-wrapper" (click)="abrirFormReserva(39)" style="top: 74%; left: 69%;"><i
+                class='bx bxs-home-alt-2'></i><span>39</span>
+            <div (click)="openForm2ConNumero(39);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(40)" style="top: 65%; left: 71%;"><i
+                class='bx bxs-home-alt-2'></i><span>40</span>
+            <div (click)="openForm2ConNumero(40);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(41)" style="top: 55%; left: 73%;"><i
+                class='bx bxs-home-alt-2'></i><span>41</span>
+            <div (click)="openForm2ConNumero(41);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+        <div class="icon-wrapper" (click)="abrirFormReserva(42)" style="top: 45%; left: 75%;"><i
+                class='bx bxs-home-alt-2'></i><span>42</span>
+            <div (click)="openForm2ConNumero(42);  $event.stopPropagation()" class="cuadroitemizqinfo"> <i
+                    class='bx bx-info-circle'></i></div>
+            <div class="cuadroitem"> <i class='bx bxs-square-rounded'></i></div>
+        </div>
+    </div>
+
+
+    <button mat-flat-button class="botonlid" (click)="ADUSERS()"
+        style="border-radius: 8px; background-color: #222222; color:#ffffff;">
+        <div class="contenido-botonlid">
+            <i class='bx bxs-user-detail'></i>
+            <p>USUARIOS</p>
+        </div>
+    </button>
+
+    <button mat-flat-button class="boton-valespromo" (click)="ADUSERS()"
+        style="border-radius: 8px; background-color: #222222; color:#ffffff;">
+        <div class="contenido-valespromo">
+            <div class="iconos-valespromo">
+                <i class='bx bxs-offer'></i>
+            </div>
+            <div class="texto-valespromo">
+                <span>VALES Y<br />
+                    PROMOCIONES</span>
+            </div>
+        </div>
+    </button>
+
+    <button mat-flat-button class="boton-botoncortcaj" (click)="ADUSERS()"
+        style="border-radius: 8px; background-color: #222222; color:#ffffff;">
+        <div class="contenido-botoncortcaj">
+            <div class="iconos-botoncortcaj">
+                <i class='bx bx-money-withdraw'></i>
+            </div>
+            <div class="texto-botoncortcaj">
+                <span>CORTES <br />
+                    DE CAJA</span>
+            </div>
+        </div>
+    </button>
+
+
+    <button mat-flat-button class="boton-botoninvent" (click)="ADUSERS()"
+        style="border-radius: 8px; background-color: #222222; color:#ffffff;">
+        <div class="contenido-botoninvent">
+            <div class="iconos-botoninvent">
+                <i class='bx bx-receipt'></i>
+            </div>
+            <div class="texto-botoninvent">
+                <span>INVENTARIOS</span>
+            </div>
+        </div>
+    </button>
+
+
+
+    <button mat-flat-button class="botonOUT" (click)="Exit()"
+        style="border-radius: 8px; background-color: #22222200; color:#ffffff;">
+        <div class="contenido-botonlid">
+            <i class='bx bx-log-out'></i>
+        </div>
+    </button>
+
+
+
+    <div class="contenedor-tabla-derecha2">
+        <table class="tabla-derecha2">
+            <thead>
+                <tr>
+                    <th>PLACAS</th>
+                    <th>HABITACIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>VBF-123</td>
+                    <td>301</td>
+                </tr>
+                <tr>
+                    <td>YTR-567</td>
+                    <td>205</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button class="boton-bell">
+        <i class='bx bxs-bell'></i>
+    </button>
+
+
+</mat-card>
+
+
+
+
+<!-- Formulario emergente HABITACION INFO -->
+<div id="formContainer" class="modal2" style="display: none;">
+    <form class="form2" [formGroup]="parteForm" (ngSubmit)="guardarNuevaParte()">
+
+        <span class="close-btn2" (click)="closeForm2()">&times;</span>
+        <p class="title" style="letter-spacing: normal;
+">SERVICIOS DE LA HABITACIÓN NUM. {{ numeroHabitacionSeleccionada }}</p>
+        <div class="inputs-column2">
+
+            <!-- INPUT: NTrabajador + BOTÓN BUSCAR -->
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container2" style="width: 97%; text-align: center; align-items: center; margin-right:10px">
+                    <select formControlName="tipohab" name="Tipohab" class="form-control button1"
+                        style="border: none; width: 97%; font-size: 88%; text-align: center; color:#ffffff;">
+                        <option value="" disabled selected>TIPO DE HABITACIÓN</option>
+                        <option value="SENCILLA">SENCILLA</option>
+                        <option value="JACUZZI">JACUZZI</option>
+                        <option value="ESPECIAL">ESPECIAL</option>
+                    </select>
+
+                    <label class="labelbusq2">Habitación:</label>
+                </div>
+            </div>
+
+            <!-- INPUT: Departamento -->
+            <div class="flexdiv" style="display: flex; height: 60px; align-items: center;">
+                <div class="container2" style="width: 97%; text-align: center; align-items: center; margin-right:10px;">
+
+                    <select formControlName="tipoCamahab" name="Tipohab" class="form-control button1"
+                        style="border: none; width: 97%; font-size: 88%; text-align: center; color:#ffffff;">
+                        <option value="" disabled selected>TIPO DE CAMA</option>
+                        <option value="K">KING SIZE (K)</option>
+                        <option value="M">MATRIMONIAL (M)</option>
+                    </select>
+                    <label class="labelbusq2">Cama de la habitación:</label>
+                </div>
+            </div>
+
+            <div class="flexdiv" style="display: flex; height: 60px; align-items: center;">
+                <div class="container2" style="width: 97%; text-align: center; align-items: center; margin-right:10px;">
+
+                    <select formControlName="jacuzzihab" name="Tipohab" class="form-control button1"
+                        style="border: none; width: 97%; font-size: 88%; text-align: center; color:#ffffff;">
+                        <option value="" disabled selected>SERVICIOS</option>
+                        <option value="JACUZZI">JACUZZI</option>
+                        <option value="ALBERCA">ALBERCA</option>
+                        <option value="N/A">NO APLICA</option>
+                    </select>
+                    <label class="labelbusq2">Servicios de la habitación:</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="subir-column2">
+
+            <!-- INPUT: Nombre Usuario -->
+            <div class="flexdiv"
+                style="display: flex; height: 60px; align-items: center; width: 97%; text-align: center;">
+                <div class="container2" style="width: 97%; text-align: center; align-items: center; margin-right:10px;">
+                    <input type="number" class="inputneg2" formControlName="preciohab" autocomplete="off"
+                        style="text-align:center" placeholder="$">
+
+                    <label class="labelbusq2">Precio habitación ($):</label>
+                </div>
+            </div>
+
+
+            <div class="buttons2">
+                <button type="submit" class="submit2"
+                    style="height: 40px; margin-top: -10px; width: 100%; background-color:#ffffff; color:black;">
+                    {{ modoEdicion ? 'Editar' : 'Agregar' }}
+                </button>
+
+                <button type="button" class="Cancelar2" (click)="closeForm2()"
+                    style="height: 40px; margin-top: -5px; width: 100%; background-color:#ffffff; color:black;">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- Formulario emergente HABITACION INFO RESERVA -->
+<div id="formReserva" class="modal3" style="display: none;">
+    <form class="form3" [formGroup]="parteForm" (ngSubmit)="reservanum3()">
+
+        <span class="close-btn3" (click)="closeForm3()">&times;</span>
+        <p class="title" style="letter-spacing: normal;
+">INFORMACION DE LA HABITACIÓN RESERVA NUM. {{ numeroHabitacionSeleccionada }}</p>
+        <div class="inputs-column2">
+
+
+
+
+
+            <!-- INPUT: NTrabajador + BOTÓN BUSCAR -->
+            <div>
+                <label class="labelbusq3" style="margin-top:120px;">USUARIO: {{ nombreUsuarioLogueado }}</label>
+            </div>
+
+            <!-- INPUT: NTrabajador + BOTÓN BUSCAR -->
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container3" style="width: 50%; text-align: center; align-items: center; margin-right:10px">
+                    <input type="text" class="inputneg2" formControlName="placas" autocomplete="off"
+                        style="text-align:center">
+                    <label class="labelbusq3">PLACAS:</label>
+                </div>
+            </div>
+
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container3" style="width: 50%; text-align: center; align-items: center; margin-right:10px">
+                    <input type="text" class="inputneg2" formControlName="placas" autocomplete="off"
+                        style="text-align:center">
+                    <label class="labelbusq3">MARCA:</label>
+                </div>
+            </div>
+
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container3" style="width: 50%; text-align: center; align-items: center; margin-right:10px">
+                    <input type="text" class="inputneg2" formControlName="placas" autocomplete="off"
+                        style="text-align:center">
+                    <label class="labelbusq3">MODELO:</label>
+                </div>
+            </div>
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container3" style="width: 50%; text-align: center; align-items: center; margin-right:10px">
+                    <input type="text" class="inputneg2" formControlName="placas" autocomplete="off"
+                        style="text-align:center">
+                    <label class="labelbusq3">COLOR:</label>
+                </div>
+            </div>
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container3" style="width: 50%; text-align: center; align-items: center; margin-right:10px">
+                    <input type="text" class="inputneg2" formControlName="placas" autocomplete="off"
+                        style="text-align:center">
+                    <label class="labelbusq3">PRECIO:</label>
+                </div>
+            </div>
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container3" style="width: 50%; text-align: center; align-items: center; margin-right:10px">
+                    <input type="text" class="inputneg2" formControlName="placas" autocomplete="off"
+                        style="text-align:center">
+                    <label class="labelbusq3">CORTE:</label>
+                </div>
+            </div>
+            <div class="flexdiv" style="display: flex; height: 60px;">
+                <div class="container3" style="width: 50%; text-align: center; align-items: center; margin-right:10px">
+                    <input type="text" class="inputneg2" formControlName="placas" autocomplete="off"
+                        style="text-align:center">
+                    <label class="labelbusq3">CLIENTE:</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="subir-column3">
+
+
+
+            <!-- INPUT: Departamento -->
+            <div class="flexdiv" style="display: flex; height: 60px; align-items: center;">
+                <div class="container3" style="width: 97%; text-align: center; align-items: center; margin-right:10px;">
+
+                    <select formControlName="tipoCamahab" name="Tipohab" class="form-control button1"
+                        style="border: none; width: 97%; font-size: 88%; text-align: center; color:#ffffff;">
+                        <option value="" disabled selected>TIPO DE CAMA</option>
+                        <option value="K">KING SIZE (K)</option>
+                        <option value="M">MATRIMONIAL (M)</option>
+                    </select>
+                    <label class="labelbusq3">ESTATUS HABITACIÓN </label>
+                </div>
+            </div>
+
+            <!-- INPUT: Nombre Usuario -->
+            <div class="flexdiv"
+                style="display: flex; height: 60px; align-items: center; width: 97%; text-align: center;">
+                <div class="container3"
+                    style="width: 110%; text-align: center; align-items: center; margin-right:10px;">
+                    <table class="tablares-tabla">
+                        <thead>
+                            <tr>
+                                <th>CANTIDAD</th>
+                                <th>DESCRIPCIÓN</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Ejemplo producto A</td>
+                                <td>$100.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Producto B largo con texto</td>
+                                <td>$200.00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Producto C</td>
+                                <td>$300.00</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Producto D</td>
+                                <td>$150.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="buttons3">
+                <button type="submit" class="submit3"
+                    style="height: 40px; margin-top: -10px; width: 100%; background-color:#ffffff; color:black;">
+                    {{ modoEdicion ? 'Editar' : 'Agregar' }}
+                </button>
+
+                <button type="button" class="Cancelar3" (click)="closeForm3()"
+                    style="height: 40px; margin-top: -5px; width: 100%; background-color:#ffffff; color:black;">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>

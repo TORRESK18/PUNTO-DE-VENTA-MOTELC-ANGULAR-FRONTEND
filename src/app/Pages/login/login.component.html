@@ -1,0 +1,42 @@
+<div class="wrapper" style="  background: linear-gradient(to right, #470505, #190a05, #190a05, #000000); ">
+  <div class="container" id="container">
+
+    <div class="container-custom">
+      <div class="form-container sign-in-container" style=" border-radius:10px">
+
+        <form #loginForm="ngForm" autocomplete="off" (ngSubmit)="verifyAdmin()">
+
+          <img src="assets/APPMTLCRLFBLCO.png" alt="Imagen superior izquierda" style="width: 90%; margin-top:20px;">
+          <h1>INICIAR SESIÓN</h1>
+
+          <input #emailInput type="text" name="emailAdmi" [(ngModel)]="emailAdmi" placeholder="Username o Email"
+            autocomplete="off" required />
+
+          <input #passwordInput type="password" name="passwordAdmi" [(ngModel)]="passwordAdmi" placeholder="Password"
+            autocomplete="new-password" required />
+
+
+          <button style="border: 1px solid #000000; margin-top:20px;">INICIAR</button>
+        </form>
+
+      </div>
+
+      <div class="overlay">
+        <img src="assets/FND.jpg" style="width: 100%; height: 100%; object-fit: cover; ">
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <img src="assets/APPMTLCRLFBG.png" alt="Logo del hotel" style="width: 6%;" />
+
+    <ul class="nav-links">
+      <li><a [routerLink]="['/']" fragment="inicio">INICIO</a></li>
+      <li class="divider">|</li>
+      <li><a [routerLink]="['/']" fragment="nosotros">NOSOTROS</a></li>
+      <li class="divider">|</li>
+      <li><a [routerLink]="['/']" fragment="habitaciones">HABITACIONES</a></li>
+      <li class="divider">|</li>
+      <li><a [routerLink]="['/']" fragment="contacto">CONTACTO</a></li>
+    </ul>
+  </nav>

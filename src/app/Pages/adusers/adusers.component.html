@@ -1,0 +1,72 @@
+
+  
+  <mat-card style="background-color: #141414db; min-height: 100vh; font-family: century-gothic, sans-serif; font-weight: 400; font-style: normal; color: black;">
+        
+    <mat-card-header>
+      <div class="header-image">
+        <img src="assets/APPMTLCRLFBG.png" alt="Imagen superior izquierda" style="width: 20%;">
+        <mat-card-title style="font-size: 2.3rem; text-transform: uppercase; margin-top: 1px;">
+          <p style="font-family: century-gothic, sans-serif; color:white; margin: 10px;">GESTIÓN DE USUARIOS</p>
+        </mat-card-title>
+      </div>
+      <link rel="stylesheet" href="adusers.component.css">
+      <!-- Botón superior izquierdo -->
+  <button class="botonandmin" (click)="saveAndExit()" style="border-radius: 10px; background-color: #8b8b8b; color:#ffffff;">
+    <i class='bx bx-chevrons-left' style=" margin-top: -17%; "></i>
+  </button>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container">
+        <input type="text" placeholder="Buscar Usuario" [(ngModel)]="ntrabajadorUs" (ngModelChange)="searchTrabajadorDynamic()" (keypress)="allowOnlyNumbers($event)" style="width: 80%; padding: 10px; margin-bottom: 10px; margin-top:0px; border-radius: 10px; font-family: century-gothic, sans-serif;">
+        <button mat-icon-button (click)="addNuevoTrabajador()" style="margin-bottom: 10px; width: 80%; background: #202020; color: white; font-family: century-gothic, sans-serif;">AGREGAR NUEVO USUARIO</button>
+        <table mat-table [dataSource]="datosAdmins" class="table table-bordered" style="width: 100%; max-height: 60%; overflow-y: auto; display: block; font-family: century-gothic, sans-serif; background-color:#ffffff">
+          <ng-container matColumnDef="ntrabajadorUs" style=" font-family: century-gothic, sans-serif;">
+            <th mat-header-cell *matHeaderCellDef style="font-family: century-gothic, sans-serif; background-color: #a1a1a157; "> Trabajador </th>
+            <td mat-cell *matCellDef="let element" style="font-family: century-gothic, sans-serif; border: 1px solid #c5c5c5;"> {{element.ntrabajadorUs}} </td>
+          </ng-container>
+          <ng-container matColumnDef="NombreUs" style=" font-family: century-gothic, sans-serif;">
+            <th mat-header-cell *matHeaderCellDef style=" font-family: century-gothic, sans-serif; background-color: #a1a1a157;"> Nombre  </th>
+            <td mat-cell *matCellDef="let element" style="font-family: century-gothic, sans-serif; border: 1px solid #c5c5c5;"> {{element.NombreUs}} </td>
+          </ng-container>
+          <ng-container matColumnDef="PuestoUs" style=" font-family: century-gothic, sans-serif;">
+            <th mat-header-cell *matHeaderCellDef style=" font-family: century-gothic, sans-serif; background-color: #a1a1a157;"> Puesto </th>
+            <td mat-cell *matCellDef="let element" style="font-family: century-gothic, sans-serif; border: 1px solid #c5c5c5;"> {{element.PuestoUs}} </td>
+          </ng-container>
+          <ng-container matColumnDef="DepartamentoUs" style=" font-family: century-gothic, sans-serif;">
+            <th mat-header-cell *matHeaderCellDef style=" font-family: century-gothic, sans-serif; background-color: #a1a1a157;"> Rol </th>
+            <td mat-cell *matCellDef="let element" style="font-family: century-gothic, sans-serif; border: 1px solid #c5c5c5;"> {{element.DepartamentoUs}} </td>
+          </ng-container>
+          <ng-container matColumnDef="EmailUs" style=" font-family: century-gothic, sans-serif;">
+            <th mat-header-cell *matHeaderCellDef style=" font-family: century-gothic, sans-serif; background-color: #a1a1a157;"> Email  </th>
+            <td mat-cell *matCellDef="let element" style="font-family: century-gothic, sans-serif; border: 1px solid #c5c5c5;"> {{element.EmailUs}} </td>
+          </ng-container>
+          <ng-container matColumnDef="PasswordUs">
+            <th mat-header-cell *matHeaderCellDef style="font-family: century-gothic, sans-serif; background-color: #a1a1a157;"> Contraseña </th>
+            <td mat-cell *matCellDef="let element" style="font-family: century-gothic, sans-serif; border: 1px solid #c5c5c5;">
+              <span *ngIf="showPassword[element.idAdmi]">{{ element.PasswordUs}}</span>
+              <span *ngIf="!showPassword[element.idAdmi]">********</span>
+              <div (click)="togglePasswordVisibility(element.idAdmi)" style="display: inline-block; cursor: pointer; margin-left: 8px;">
+                <i class="bx" [class.bx-show]="!showPassword[element.idAdmi]" [class.bx-hide]="showPassword[element.idAdmi]" style="font-size: 1.2rem; color: #5c5c5c;"></i>
+              </div>
+            </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="accion" style="width: 5%; font-family: century-gothic, sans-serif;">
+            <th mat-header-cell *matHeaderCellDef style="width: 5%; font-family: century-gothic, sans-serif; background-color: #a1a1a157;"> Acción </th>
+            <td mat-cell *matCellDef="let element" style="display: flex;">
+              <button mat-icon-button color="primary" (click)="editDatos(element)" class="custom-button" style="width: 45%; border-radius: 10px;"><i class='bx bx-edit-alt' style="font-size: 1.4rem; color: white; "></i></button>
+              <button mat-icon-button color="warn" (click)="confirmDelete(element)" class="custom-button" style="width: 45%; border-radius: 10px;"><i class='bx bxs-trash' style="font-size: 1.4rem; color: white;"></i></button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="['ntrabajadorUs', 'NombreUs', 'PuestoUs', 'DepartamentoUs', 'EmailUs', 'PasswordUs', 'accion']"></tr>
+<tr mat-row *matRowDef="let row; columns: ['ntrabajadorUs', 'NombreUs', 'PuestoUs', 'DepartamentoUs', 'EmailUs', 'PasswordUs', 'accion'];"></tr>
+
+
+          
+          <tr *ngIf="datosAdmins.length === 0">
+            <td colspan="7" style="text-align: center;">NO SE ENCONTRARON RESULTADOS</td>
+          </tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>

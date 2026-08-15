@@ -1,0 +1,286 @@
+<!-- Botón hamburguesa (empieza oculto) -->
+<div id="hamburguesa-container" class="hamburguesa-container hamburguesa-hidden"
+    style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+    <button style="background: transparent; border: none; padding: 0;">
+        <label class="burger" for="burger">
+            <input type="checkbox" id="burger" (change)="toggleMenu()">
+
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </button>
+</div>
+
+<!-- Menú lateral derecho -->
+<div id="side-menu" class="side-menu">
+    <ul class="side-menu-links">
+        <li><a href="javascript:void(0)" (click)="toggleMenu('inicio')"> <i class='bx bxs-home bx-flip-horizontal'></i> INICIO</a></li>
+        <li><a href="javascript:void(0)" (click)="toggleMenu('nosotros')"> <i class='bx bxs-buildings'></i> NOSOTROS</a></li>
+        <li><a href="javascript:void(0)" (click)="toggleMenu('habitaciones')"><i class='bx bxs-hotel'></i> HABITACIONES</a></li>
+        <li><a href="javascript:void(0)" (click)="toggleMenu('contacto')"> <i class='bx bxs-map'></i> CONTACTO</a></li>
+        <li><a href="javascript:void(0)" (click)="goToLogin()"> <i class='bx bxs-log-in-circle'></i> INGRESAR</a></li>    
+    </ul>
+</div>
+
+<!-- Fondo oscuro cuando el menú está abierto -->
+<div id="menu-overlay" class="menu-overlay" (click)="toggleMenu()"></div>
+
+<nav class="navbar">
+    <img src="assets/APPMTLCRLFBG.png" alt="Logo del hotel" style="width: 6%;" />
+  
+    <ul class="nav-links">
+      <li><a href="javascript:void(0)" (click)="scrollTo('inicio', $event)">INICIO</a></li>
+      <li class="divider">|</li>
+      <li><a href="javascript:void(0)" (click)="scrollTo('nosotros', $event)">NOSOTROS</a></li>
+      <li class="divider">|</li>
+      <li><a href="javascript:void(0)" (click)="scrollTo('habitaciones', $event)">HABITACIONES</a></li>
+      <li class="divider">|</li>
+      <li><a href="javascript:void(0)" (click)="scrollTo('contacto', $event)">CONTACTO</a></li>
+      <li class="divider">|</li>
+      <li><a href="javascript:void(0)" (click)="goToLogin()">INGRESAR</a></li>
+    </ul>
+  </nav>
+  
+
+
+<section id="inicio" class="hero"
+    style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;  background-size: cover; background-position: center;">
+    <!-- Capa oscura semitransparente -->
+    <div style="position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.589); z-index: 0;"></div>
+
+    <div class="hero-content" style="position: relative; z-index: 1; color: white;">
+        <img src="assets/APPMTLCRLFBG.png" alt="Logo del hotel" style="width: 84%;" />
+        <h1>Bienvenidos a Motel Cristal</h1>
+        <p>Comodidad, privacidad y estilo</p>
+
+        <!-- Botón con flecha hacia abajo -->
+        <button onclick="document.getElementById('nosotros').scrollIntoView({ behavior: 'smooth' });"
+            style="margin-top: 0px; background: transparent; border: none; cursor: pointer; animation: bounce 2s infinite;">
+            <i class='bx bx-chevron-down-square bx-fade-down bx-flip-horizontal'
+                style="color:white; font-size:3rem; margin:0px;"></i>
+        </button>
+    </div>
+</section>
+
+
+<section id="nosotros" class="noso  noso1 altura-100vh">
+    <div class="nosotros-distribucion" style="z-index: 99;">
+      <!-- Columna izquierda: texto y valores -->
+      <div class="nosotros-info">
+        <span class="nosotros-slogan">Un Refugio de Lujo</span>
+
+        <div class="nosotros-conocenos">
+            <h2 class="nosotros-heading">Conócenos – Motel Cristal</h2>
+            <p class="conocenos-text">
+              Con una trayectoria de más de <strong>15 años</strong> ofreciendo experiencias únicas, <strong>Motel Cristal</strong> se ha consolidado como un referente de elegancia, privacidad y confort en la ciudad. Desde nuestros inicios, nos hemos enfocado en brindar a nuestros clientes un espacio donde la discreción, el buen gusto y la comodidad se unen para crear momentos inolvidables.
+            </p>
+            <p class="conocenos-text">
+              Nuestro compromiso con la calidad se refleja en cada detalle: desde el diseño moderno y sofisticado de nuestras instalaciones, hasta el servicio personalizado que distingue cada estancia.
+            </p> 
+          </div>
+
+        <h2 class="nosotros-heading">Descubre Motel Cristal</h2>
+        <p class="conocenos-text">
+          En Motel Cristal, cada detalle está pensado para ofrecerte una experiencia inolvidable. Desde nuestras habitaciones de lujo hasta nuestros servicios personalizados, te invitamos a disfrutar del confort y la exclusividad que mereces.
+        </p>
+  
+        <ul class="nosotros-valores-list">
+          <li>
+            <i class='bx bx-bed'></i>
+            <div>
+              <h4>Confort Superior</h4>
+              <p>Habitaciones equipadas con todo lo que necesitas para relajarte.</p>
+            </div>
+          </li>
+
+          <li>
+            <i class='bx bx-restaurant'></i>
+            <div>
+              <h4>Gastronomía Premium</h4>
+              <p>Platos cuidadosamente elaborados para deleitar tu paladar.</p>
+            </div>
+          </li>
+        </ul>
+
+
+          
+      </div>
+  
+      <!-- Columna derecha: cards fijas visibles -->
+      <div class="testimonios-paralelos">
+        <div class="testimonio-card">
+          <p>Mi estancia en Motel Cristal fue simplemente perfecta.<br><strong>El lujo y la atención al detalle superaron todas mis expectativas.</strong></p>
+          <div class="testimonial-profile">
+            <img src="/assets/userpr.jpg" alt="Sofía">
+            <div>
+              <strong>Anónimo</strong>
+              <span>Huésped Satisfecho</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="testimonio-card">
+          <p>Todo fue impecable.<br><strong>Una experiencia que definitivamente repetiré.</strong></p>
+          <div class="testimonial-profile">
+            <img src="/assets/userpr.jpg" alt="Luis">
+            <div>
+              <strong>Anónimo</strong>
+              <span>Cliente Frecuente</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="testimonio-card">
+          <p>Ideal para una escapada romántica.<br><strong>Discreción, elegancia y excelente servicio.</strong></p>
+          <div class="testimonial-profile">
+            <img src="/assets/userpr.jpg" alt="María">
+            <div>
+              <strong>Anónimo</strong>
+              <span>Primera visita</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+
+  
+  <!-- SECCIÓN HABITACIONES DESTACADAS -->
+  <section id="habitaciones" class="habitaciones-section content">
+
+  
+    <h2 class="habitaciones-title">Vive el Lujo en Cada Detalle con Nuestras Habitaciones</h2>
+    <div class="habitaciones-grid">
+  
+      <div class="habitacion-card">
+        <h3>Habitaciones de Lujo</h3>
+        <p>Cada habitación está diseñada para ofrecerte la máxima comodidad y estilo.</p>
+        <img src="assets/SLDE.jpg" alt="Habitación de lujo">
+      </div>
+  
+      <div class="habitacion-card">
+        <h3>Habitaciones con Jacuzzi</h3>
+        <p>Relájate con una experiencia premium de confort y privacidad.</p>
+        <img src="assets/slidvert2.jpg" alt="Habitación con jacuzzi">
+      </div>
+  
+      <div class="habitacion-card">
+        <h3>Habitaciones Temáticas</h3>
+        <p>Ambientes únicos para despertar los sentidos y disfrutar al máximo.</p>
+        <img src="assets/FND2.jpg" alt="Habitación temática">
+      </div>
+  
+    </div>
+  </section>
+
+<!-- SECCIÓN CONTACTO COMPLETA -->
+<section id="contacto" class="contacto-seccion">
+
+    <!-- Mapa con card de ubicación -->
+    <div class="contacto-mapa-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6122.524797910731!2d-100.8903526874859!3d22.10236837974514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa482ff19dca5%3A0x2804a1a482acc950!2sCarr%20San%20Luis%20Mexico%204561%2C%20Casanova%2C%2078397%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.!5e1!3m2!1ses!2smx!4v1745004681283!5m2!1ses!2smx"
+        class="contacto-mapa" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+  
+      <!-- Card flotante encima del mapa -->
+      <div class="contacto-card-ubicacion">
+        <h3>Nuestra ubicación</h3>
+        <p>Descubre el lugar donde comienza tu experiencia premium. Encuentra fácilmente Motel Cristal en el corazón de San Luis Potosí.</p>
+        <a href="https://maps.app.goo.gl/YNx4YFSuziZVzKbP6" target="_blank">
+          <i class='bx bx-map-pin'></i> Motel Cristal, San Luis Potosí
+        </a>
+      </div>
+    </div>
+  
+    <!-- Parte inferior de contacto -->
+    <div class="contacto-wrapper">
+      <div class="contacto-imagen">
+        <div class="collage-slider" id="slider-2">
+            <div class="slide active" style="background-image: url('/assets/slidhor1.jpg');">
+                <div class="gradient-overlay"></div>
+                <div class="caption">
+                    <h2>Experiencia Inolvidable</h2>
+                    <p>Cada detalle está pensado para despertar tus sentidos.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('/assets/slidhor2.jpg');">
+                <div class="gradient-overlay"></div>
+                <div class="caption">
+                    <h2>Lujo que Enamora</h2>
+                    <p>Ambientes íntimos, diseñados para vivir momentos únicos.</p>
+                </div>
+            </div>
+            <div class="slide active" style="background-image: url('/assets/slidhor1.jpg');">
+                <div class="gradient-overlay"></div>
+                <div class="caption">
+                    <h2>Confort a tu Medida</h2>
+                    <p>Disfruta de una estancia cómoda, privada y con estilo.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('/assets/slidhor2.jpg');">
+                <div class="gradient-overlay"></div>
+                <div class="caption">
+                    <h2>Estilo y Privacidad</h2>
+                    <p>Relájate en espacios diseñados para tu tranquilidad</p>
+                </div>
+            </div>
+            <div class="slide active" style="background-image: url('/assets/slidhor1.jpg');">
+                <div class="gradient-overlay"></div>
+                <div class="caption">
+                    <h2>Privacidad Garantizada</h2>
+                    <p>Tu tranquilidad es nuestra prioridad</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('/assets/slidhor2.jpg');">
+                <div class="gradient-overlay"></div>
+                <div class="caption">
+                    <h2>Escapada Perfecta</h2>
+                    <p>Desconecta del mundo sin salir de la ciudad</p>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-left-circle arrow left' (click)="goToPrevious('slider-2')"></i>
+            <i class='bx bx-chevron-right-circle arrow right' (click)="advanceSlider('slider-2')"></i>
+            
+
+        </div>
+      </div>
+  
+      <div class="contacto-info">
+        <h2 class="contacto-titulo">Contáctanos y vive la experiencia Cristal</h2>
+        <div class="contacto-datos">
+          <div class="dato">
+            <i class='bx bx-time'></i>
+            <div>
+              <h4>Horario de atención</h4>
+              <p>Lunes a Viernes<br>8:00 am a 8:00 pm</p>
+            </div>
+          </div>
+  
+          <div class="dato">
+            <i class='bx bx-map'></i>
+            <div>
+              <h4>Dirección</h4>
+              <p>Carr San Luis Mexico 4561, Casanova, 78397 San Luis Potosí, S.L.P.</p>
+            </div>
+          </div>
+  
+          <div class="dato">
+            <i class='bx bx-phone'></i>
+            <div>
+              <h4>Teléfono</h4>
+              <p>+52 55 7777777</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  

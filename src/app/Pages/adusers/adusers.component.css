@@ -1,0 +1,732 @@
+html, body {
+    font-family: century-gothic, sans-serif;
+    color: black;
+    background: #454545;
+}
+
+:root {
+    --sidebar-color: linear-gradient(to right, #303335, #fffffff1);
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+.header-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    padding: 20px;
+}
+
+.centered {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.bx-show, .bx-hide {
+    cursor: pointer;
+  }
+  
+
+button {
+    margin-top: 20px;
+    margin: 2px;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: black;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+    background: #202020;
+}
+
+button:hover {
+    background: linear-gradient(to right, #000000, #d25039);
+    box-shadow: 0 0 30px 5px #944848;
+    transition: all 0.2s ease-out;
+    color: #5a5a5a;
+}
+
+button:hover::before {
+    animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #5f5f5f;
+    box-shadow: 0 0 50px 30px #5f5f5f;
+    transform: skewX(-20deg);
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+button:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.tab2 {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    align-self: center;
+}
+
+.table-bordered {
+    width: 100%;
+    height: 50%;
+    margin-top: 5px;
+    border-collapse: collapse;
+    font-size: 1.1em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: 1.5px solid black;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.table-bordered thead tr {
+    background-color: #8c3d3d;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-bordered th,
+.table-bordered td {
+    padding: 0px 5px;
+    text-align: center;
+}
+
+.table-bordered tbody tr {
+    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+.table-bordered tbody tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+.table-bordered tbody tr:last-of-type {
+    border-bottom: 2px solid #980000;
+}
+
+.table-bordered tbody tr.active-row {
+    font-weight: bold;
+    color: #980000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    mat-card {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    mat-card-title p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    table,
+    th,
+    td {
+        font-size: 0.875rem;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.botonandmin {
+    width: 4%;
+    position: fixed;
+    font-size: 2.1rem;
+    top: 20px;
+    left: 20px;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    background-color: #5c5c5c;
+    color: #ffffff;
+}
+
+.icon {
+    border-radius: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin-left: 3px;
+    margin-bottom: 2px;
+}
+
+/* Estilos para el cuadro emergente */
+.mat-dialog-container {
+    font-family: century-gothic, sans-serif;
+    color: black;
+    height: 40%;
+    width: 40%;
+    overflow: auto;
+    filter: blur(10px); /* Desenfoque inicial */
+    z-index: 99999; /* Asegura que el contenido esté detrás de la imagen */
+    transition: filter 0s 0s; /* Quita el desenfoque instantáneamente después de 10 segundos */
+}
+
+/* Estilos para desenfocar el contenido cuando el cuadro emergente está activo */
+.cdk-global-overlay-wrapper {
+    z-index: 1000;
+}
+
+.cdk-overlay-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.form1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 26%;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #353535;
+    color: #fff;
+    border: 1px solid #333;
+    font-family: century-gothic, sans-serif;
+    align-items: center;
+    align-content: center;
+    filter: blur(10px); /* Desenfoque inicial */
+    z-index: 99999; /* Asegura que el contenido esté detrás de la imagen */
+    transition: filter 0s 0s; /* Quita el desenfoque instantáneamente después de 10 segundos */
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: #fdfdfd;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #ff0000;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    color: white;
+    width: 100%;
+}
+
+.container .label {
+    font-size: 15px;
+    padding-left: 10px;
+    position: absolute;
+    top: 13px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.inputneg {
+    width: 97%;
+    height: 45px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1), -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.inputneg:focus {
+    border: 2px solid transparent;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1), -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1), inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .inputneg:valid ~ .label,
+.container .inputneg:focus ~ .label {
+    transition: 0.3s;
+    padding-left: 2px;
+    transform: translateY(-35px);
+}
+
+.container .inputneg:valid,
+.container .inputneg:focus {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1), -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1), inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/*--------------------------------------------------------------------*/
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.3);
+}
+  
+.loading-image-container {
+    position: relative;
+    width: 10%;
+    animation: bounce 2s ease-in-out infinite; 
+}
+  
+.animated-loading-image {
+    width: 100%;
+    display: block;
+}
+  
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px); 
+    }
+}
+body.loading-active {
+    filter: blur(10px);
+}
+
+/*----------------------------*/
+
+
+/* Capa de desenfoque de fondo */
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 999;
+}
+
+.blur-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal centrado con animación solo al abrir */
+.modal-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    animation: fadeIn 0.4s ease-out forwards; /* Animación solo al abrir */
+}
+
+/* Hacer visible el formulario cuando el modal está activo */
+.modal-form.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mantener estático en el centro, incluso al pasar el cursor */
+.form:hover {
+    transform: none; /* Desactiva el movimiento al pasar el cursor */
+}
+
+/* Animación inicial al abrir */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+  
+  /* From Uiverse.io by Praashoo7 */ 
+.form {
+    width: 250px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #bdc3c7, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #bdc3c7, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    border-radius: 4px;
+    transition: .4s ease-in-out;
+  }
+  
+
+  
+  #heading {
+    text-align: center;
+    margin: .2em;
+    margin-bottom: .4em;
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    font-family: 'Century Gothic', sans-serif;
+  }
+  
+  .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  
+  .input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: white;
+  }
+  
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+  }
+  
+  .form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2em;
+  }
+  
+
+  .primary2-button2, .primary1-button1 {
+
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    cursor: pointer;
+    font-size: 85%; /* Tamaño en porcentaje */
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    padding: 0.8rem 0; /* Espaciado en porcentaje */
+    text-align: center;
+    width: 100%;
+}
+
+  /* From Uiverse.io by faizanullah1999 */ 
+.primary2-button2 {
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    border: 1px solid #000000;
+    padding: 0.8rem 2.1rem;
+    background: linear-gradient(to right, #00bf8f, #001510); 
+    background-color: #000000;
+    background-size: 200%;
+    background-position: 200%;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-in-out;
+    transition-property: background-position, border, color;
+    position: relative;
+    z-index: 1;
+   }
+   
+   .primary2-button2:hover {
+    border: 1px solid #46b5ff00;
+    color: white;
+    background-position: 40%;
+   }
+   
+   .primary2-button2:before {
+    content: "";
+    position: absolute;
+    background-color: #0E1822;
+    width: 0.2rem;
+    height: 0.2rem;
+    top: -1px;
+    left: -1px;
+    transition: background-color 0.15s ease-in-out;
+   }
+   
+   .primary2-button2:hover:before {
+    background-color: white;
+   }
+   
+   .primary2-button2:hover:after {
+    background-color: white;
+   }
+   
+   .primary2-button2:after {
+    content: "";
+    position: absolute;
+    background-color: #00bf8f;
+    width: 0.3rem;
+    height: 0.3rem;
+    bottom: -1px;
+    right: -1px;
+    transition: background-color 0.15s ease-in-out;
+   }
+   
+   .button2-borders2 {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+   }
+   
+   .button2-borders2:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.5em);
+    height: 50%;
+    left: -0.3em;
+    top: -0.3em;
+    border: 1px solid #0E1822;
+    border-bottom: 0px;
+       /* opacity: 0.3; */
+   }
+   
+   .button2-borders2:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.5em);
+    height: 50%;
+    left: -0.3em;
+    bottom: -0.3em;
+    border: 1px solid #0E1822;
+    border-top: 0px;
+       /* opacity: 0.3; */
+    z-index: 0;
+   }
+   
+   .shape {
+    fill: #0E1822;
+   }
+   
+
+     /* From Uiverse.io by faizanullah1999 */ 
+.primary1-button1 {
+    font-family: 'Century Gothic', sans-serif;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    border: 1px solid #0e182200;
+    padding: 0.8rem 2.1rem;
+    background: linear-gradient(to right, #333333, #dd1818);
+    background-color: #000000;
+    background-size: 200%;
+    background-position: 200%;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-in-out;
+    transition-property: background-position, border, color;
+    position: relative;
+    z-index: 1;
+   }
+   
+   .primary1-button1:hover {
+    border: 1px solid #d6001200;
+    color: white;
+    background-position: 40%;
+   }
+   
+   .primary1-button1:before {
+    content: "";
+    position: absolute;
+    background-color: #484c50;
+    width: 0.2rem;
+    height: 0.2rem;
+    top: -1px;
+    left: -1px;
+    transition: background-color 0.15s ease-in-out;
+   }
+   
+   .primary1-button1:hover:before {
+    background-color: white;
+   }
+   
+   .primary1-button1:hover:after {
+    background-color: white;
+   }
+   
+   .primary1-button1:after {
+    content: "";
+    position: absolute;
+    background-color: #ff0015;
+    width: 0.3rem;
+    height: 0.3rem;
+    bottom: -1px;
+    right: -1px;
+    transition: background-color 0.15s ease-in-out;
+   }
+   
+   .button1-borders1 {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+   }
+   
+   .button1-borders1:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.5em);
+    height: 50%;
+    left: -0.3em;
+    top: -0.3em;
+    border: 1px solid #6b7075;
+    border-bottom: 0px;
+       /* opacity: 0.3; */
+   }
+   
+   .button1-borders1:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.5em);
+    height: 50%;
+    left: -0.3em;
+    bottom: -0.3em;
+    border: 1px solid #4b5157;
+    border-top: 0px;
+       /* opacity: 0.3; */
+    z-index: 0;
+   }
+   
+   .shape {
+    fill: #0E1822;
+   }
+   
